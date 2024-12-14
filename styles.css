@@ -1,59 +1,63 @@
-/* Atur tampilan dasar halaman */
+/* Tampilan Body dan Latar Belakang */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(0, 0, 50, 0.9); /* Biru navy dengan opacity rendah */
+    background-color: #1c2d5d; /* Warna biru navy */
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Memastikan halaman dapat di-scroll */
-    position: relative;
-    color: #fff; /* Warna font dasar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Ornamen Salju */
+/* Snowflakes */
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
 .snowflake {
     position: absolute;
     top: -10px;
-    color: #fff;
-    font-size: 2rem;
-    opacity: 0.8;
-    animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+    color: white;
+    font-size: 24px;
+    user-select: none;
+    animation: fall 10s linear infinite;
 }
 
 @keyframes fall {
-    to {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
         transform: translateY(100vh) rotate(360deg);
-    }
-}
-
-@keyframes sway {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(20px);
     }
 }
 
 /* Styling Form */
 .form-container {
-    background: linear-gradient(135deg, #3e4a89, #7886d6); /* Gradient biru lembut */
+    background: linear-gradient(135deg, #e0f7fa, #ffcccb); /* Gradient biru ke cream */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 420px;
-    margin: 20px auto;
+    box-sizing: border-box;
     position: relative;
-    z-index: 10;
-    backdrop-filter: blur(5px);
-    color: #fff; /* Warna teks putih */
+    z-index: 2; /* Pastikan form berada di atas snowflakes */
 }
 
 h1 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
-    color: #f9f9f9; /* Warna putih lembut */
+    color: #3b9a6f;
 }
 
 label {
@@ -61,10 +65,12 @@ label {
     font-size: 16px;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #f1f1f1; /* Teks kontras tinggi */
+    color: #333;
 }
 
 input[type="text"],
+input[type="email"],
+input[type="number"],
 textarea {
     width: 100%;
     padding: 12px;
@@ -77,8 +83,10 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
 textarea:focus {
-    border-color: #66b2ff; /* Highlight fokus */
+    border-color: #3b9a6f;
 }
 
 textarea {
@@ -92,19 +100,15 @@ textarea {
 
 .radio-group label {
     font-size: 16px;
-    color: #e0e0e0;
+    color: #555;
     display: block;
     margin-bottom: 8px;
-}
-
-.radio-group input[type="radio"] {
-    margin-right: 10px;
 }
 
 button {
     width: 100%;
     padding: 15px;
-    background-color: #0044cc; /* Biru gelap */
+    background-color: #6f4f1f; /* Warna cokelat */
     color: white;
     border: none;
     border-radius: 8px;
@@ -114,24 +118,13 @@ button {
 }
 
 button:hover {
-    background-color: #0066ff; /* Biru terang */
+    background-color: #8e6a42;
 }
 
-/* Styling Santa Claus */
-.santa-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 5;
-}
-
-.santa-image {
-    width: 120px;
-}
-
-/* Responsif */
+/* Responsif untuk layar kecil */
 @media (max-width: 480px) {
     .form-container {
+        width: 90%;
         padding: 20px;
     }
 
@@ -144,6 +137,8 @@ button:hover {
     }
 
     input[type="text"],
+    input[type="email"],
+    input[type="number"],
     textarea {
         font-size: 14px;
     }
@@ -151,9 +146,5 @@ button:hover {
     button {
         font-size: 16px;
         padding: 12px;
-    }
-
-    .santa-image {
-        width: 100px;
     }
 }
