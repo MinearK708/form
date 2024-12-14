@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto; /* Enable scroll */
     position: relative; /* Agar posisi snowflakes sesuai dengan body */
 }
 
@@ -20,18 +20,17 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 2; /* Snowflakes harus berada di atas background dan di bawah form */
+    z-index: 2;
 }
 
 .snowflake {
     position: absolute;
     color: white;
-    font-size: 24px;
+    font-size: 25px;
     user-select: none;
-    animation: fall 10s linear infinite, drift 5s linear infinite;
+    animation: fall linear infinite;
 }
 
-/* Animasi jatuh ke bawah */
 @keyframes fall {
     0% {
         transform: translateY(-100px); /* Mulai dari atas */
@@ -41,38 +40,25 @@ body {
     }
 }
 
-/* Animasi mengayun ke kiri dan kanan */
-@keyframes drift {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(50px); /* Bergerak ke kanan */
-    }
-    100% {
-        transform: translateX(-50px); /* Bergerak ke kiri */
-    }
-}
-
 /* Styling Form */
 .form-container {
-    background: linear-gradient(135deg, #e0f7fa, #ffcccb); /* Gradient biru ke cream */
+    background: linear-gradient(135deg, #1c2d5d, #3b4a7f); /* Gradient biru navy dan lebih gelap */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 420px;
     box-sizing: border-box;
     position: relative;
-    z-index: 3; /* Form berada di atas snowflakes */
-    background-color: rgba(255, 255, 255, 0.8); /* Transparansi agar snowflakes terlihat */
+    z-index: 3;
+    background-color: rgba(28, 45, 93, 0.85);
 }
 
 h1 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
-    color: #3b9a6f;
+    color: white;
 }
 
 label {
@@ -80,7 +66,7 @@ label {
     font-size: 16px;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
 }
 
 input[type="text"],
@@ -115,7 +101,7 @@ textarea {
 
 .radio-group label {
     font-size: 16px;
-    color: #555;
+    color: #fff;
     display: block;
     margin-bottom: 8px;
 }
@@ -123,7 +109,7 @@ textarea {
 button {
     width: 100%;
     padding: 15px;
-    background-color: #6f4f1f; /* Warna cokelat */
+    background-color: #6f4f1f;
     color: white;
     border: none;
     border-radius: 8px;
