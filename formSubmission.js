@@ -16,9 +16,10 @@ document.getElementById('dataForm').addEventListener('submit', function(e) {
         },
         body: JSON.stringify(dataObject) // Mengirim data dalam format JSON
     })
-    .then(response => response.text())
+    .then(response => response.text())  // Mengambil response dalam format text
     .then(response => {
         alert("Data telah berhasil dikirim: " + response);  // Menampilkan hasil dari server
+        window.location.href = "join-grup.html";  // Redirect ke halaman selanjutnya
     })
     .catch(error => {
         console.error('Error:', error);
