@@ -9,7 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    position: relative; /* Pastikan posisi body terdefinisi */
+    position: relative; /* Agar posisi snowflakes sesuai dengan body */
 }
 
 /* Snowflakes */
@@ -20,7 +20,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 1; /* Snowflakes harus berada di bawah form */
+    z-index: 2; /* Snowflakes harus berada di atas background dan di bawah form */
 }
 
 .snowflake {
@@ -28,15 +28,29 @@ body {
     color: white;
     font-size: 24px;
     user-select: none;
-    animation: fall 10s linear infinite;
+    animation: fall 10s linear infinite, drift 5s linear infinite;
 }
 
+/* Animasi jatuh ke bawah */
 @keyframes fall {
     0% {
-        transform: translateY(-100px) rotate(0deg);
+        transform: translateY(-100px); /* Mulai dari atas */
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(100vh); /* Jatuh ke bawah */
+    }
+}
+
+/* Animasi mengayun ke kiri dan kanan */
+@keyframes drift {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px); /* Bergerak ke kanan */
+    }
+    100% {
+        transform: translateX(-50px); /* Bergerak ke kiri */
     }
 }
 
@@ -50,8 +64,8 @@ body {
     max-width: 420px;
     box-sizing: border-box;
     position: relative;
-    z-index: 2; /* Pastikan form berada di atas snowflakes */
-    background-color: rgba(255, 255, 255, 0.8); /* Warna form sedikit transparan */
+    z-index: 3; /* Form berada di atas snowflakes */
+    background-color: rgba(255, 255, 255, 0.8); /* Transparansi agar snowflakes terlihat */
 }
 
 h1 {
