@@ -3,36 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Data Diri</title>
+    <title>Formulir Data Diri - Natal</title>
     <style>
-        /* Latar belakang halaman */
+        /* Atur tampilan dasar halaman */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #a8d5e2, #e9f5f1);
+            background-color: #e9f5f1; /* Warna latar belakang lembut */
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Kontainer Form */
+        /* Ornamen Salju */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Styling Form */
         .form-container {
-            background-color: white;
+            background: linear-gradient(135deg, #ff7f7f, #d4ff7f); /* Gradien Natal */
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 420px;
             box-sizing: border-box;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px); /* Efek blur transparansi */
+            color: #333;
         }
 
         h1 {
             text-align: center;
             font-size: 28px;
             margin-bottom: 20px;
-            color: #388e3c;
+            color: white; /* Kontras dengan latar belakang */
         }
 
         label {
@@ -40,11 +62,10 @@
             font-size: 16px;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #333;
+            color: white; /* Kontras dengan latar belakang */
         }
 
         input[type="text"],
-        input[type="email"],
         input[type="number"],
         textarea {
             width: 100%;
@@ -54,6 +75,13 @@
             border-radius: 8px;
             font-size: 16px;
             box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border-color: #3b9a6f; /* Highlight border saat fokus */
         }
 
         textarea {
@@ -65,10 +93,21 @@
             margin-bottom: 20px;
         }
 
+        .radio-group label {
+            font-size: 16px;
+            color: white;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+        }
+
         button {
             width: 100%;
             padding: 15px;
-            background-color: #d32f2f;
+            background-color: #6f4f1f; /* Warna cokelat hangat */
             color: white;
             border: none;
             border-radius: 8px;
@@ -78,85 +117,103 @@
         }
 
         button:hover {
-            background-color: #c62828;
+            background-color: #8e6a42;
         }
 
-        /* Salju */
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            left: 50%;
-            font-size: 1.2em;
-            color: white;
-            opacity: 0.8;
-            animation: snowflake-fall 10s linear infinite, snowflake-sway 3s ease-in-out infinite;
-        }
-
-        @keyframes snowflake-fall {
-            0% {
-                top: -10px;
-            }
-            100% {
-                top: 100vh;
-            }
-        }
-
-        @keyframes snowflake-sway {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(20px);
-            }
-        }
-
-        /* Pohon Natal */
+        /* Gambar Pohon Natal */
         .christmas-tree {
-            position: fixed;
+            position: absolute;
             bottom: 20px;
-            right: 20px;
-            width: 100px;
-            height: auto;
+            left: 20px;
+            width: 80px;
+            z-index: 5;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 480px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="number"],
+            textarea {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .christmas-tree {
+                width: 60px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Ornamen Salju -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement("span");
+                snowflake.textContent = "❄";
+                snowflake.className = "snowflake";
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDelay = `${Math.random() * 10}s`;
+                snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+                document.body.appendChild(snowflake);
+            }
+        });
+    </script>
+
+    <!-- Kontainer Formulir -->
     <div class="form-container">
         <h1>Formulir Data Diri</h1>
         <form id="dataForm" action="join-grup.html" method="GET">
+            <!-- Nama Lengkap -->
             <label for="nama">Nama Lengkap:</label>
             <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
+
+            <!-- Nomor Telepon -->
             <label for="telepon">Nomor Telepon:</label>
             <input type="text" id="telepon" name="telepon" placeholder="Masukkan Nomor Telepon" required>
+
+            <!-- Usia -->
             <label>Usia:</label>
             <div class="radio-group">
                 <label><input type="radio" name="usia" value="12-15" required> 12-15 tahun</label>
                 <label><input type="radio" name="usia" value="16-19"> 16-19 tahun</label>
                 <label><input type="radio" name="usia" value="20 keatas"> 20 tahun keatas</label>
             </div>
+
+            <!-- Alamat -->
             <label for="alamat">Alamat:</label>
             <textarea id="alamat" name="alamat" placeholder="Masukkan Alamat Lengkap" required></textarea>
+
+            <!-- Profesi -->
             <label>Profesi:</label>
             <div class="radio-group">
                 <label><input type="radio" name="profesi" value="Pelajar" required> Pelajar</label>
                 <label><input type="radio" name="profesi" value="Bekerja"> Bekerja</label>
             </div>
+
+            <!-- Tombol Kirim -->
             <button type="submit">Selanjutnya</button>
         </form>
     </div>
+
+    <!-- Pohon Natal -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Christmas_tree_icon.png/1024px-Christmas_tree_icon.png" alt="Pohon Natal" class="christmas-tree">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const snowflakes = Array.from({ length: 50 }, () => {
-                const span = document.createElement("span");
-                span.textContent = "❄";
-                span.className = "snowflake";
-                span.style.left = `${Math.random() * 100}vw`;
-                span.style.fontSize = `${Math.random() * 10 + 10}px`;
-                span.style.animationDelay = `${Math.random() * 5}s`;
-                document.body.appendChild(span);
-            });
-        });
-    </script>
 </body>
 </html>
