@@ -5,189 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Data Diri</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Tampilan Body dan Latar Belakang */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1c2d5d; /* Warna biru navy */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative; /* Agar posisi snowflakes sesuai dengan body */
-        }
-
-        /* Snowflakes */
-        .snowflakes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2; /* Snowflakes harus berada di atas background dan di bawah form */
-        }
-
-        .snowflake {
-            position: absolute;
-            color: white;
-            font-size: 24px;
-            user-select: none;
-            animation: fall 10s linear infinite, drift 5s linear infinite;
-        }
-
-        /* Animasi jatuh ke bawah */
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px); /* Mulai dari atas */
-            }
-            100% {
-                transform: translateY(100vh); /* Jatuh ke bawah */
-            }
-        }
-
-        /* Animasi mengayun ke kiri dan kanan */
-        @keyframes drift {
-            0% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(50px); /* Bergerak ke kanan */
-            }
-            100% {
-                transform: translateX(-50px); /* Bergerak ke kiri */
-            }
-        }
-
-        /* Styling Form */
-        .form-container {
-            background: linear-gradient(135deg, #1c2d5d, #3b4a7f); /* Gradient biru navy dan lebih gelap */
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 420px;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 3; /* Form berada di atas snowflakes */
-            background-color: rgba(28, 45, 93, 0.85); /* Transparansi biru navy, agar salju tetap terlihat */
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        label {
-            display: block;
-            font-size: 16px;
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="number"]:focus,
-        textarea:focus {
-            border-color: #3b9a6f;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .radio-group {
-            margin-bottom: 20px;
-        }
-
-        .radio-group label {
-            font-size: 16px;
-            color: #fff;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #6f4f1f; /* Warna cokelat */
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #8e6a42;
-        }
-
-        /* Responsif untuk layar kecil */
-        @media (max-width: 480px) {
-            .form-container {
-                width: 90%;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            label {
-                font-size: 14px;
-            }
-
-            input[type="text"],
-            input[type="email"],
-            input[type="number"],
-            textarea {
-                font-size: 14px;
-            }
-
-            button {
-                font-size: 16px;
-                padding: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <!-- Snowflakes -->
     <div class="snowflakes" aria-hidden="true">
-        <!-- Membuat 100 salju -->
-        <div class="snowflake" style="left: 10%; animation-duration: 8s; font-size: 30px;">&#10052;</div>
-        <div class="snowflake" style="left: 20%; animation-duration: 12s; font-size: 20px;">&#10052;</div>
-        <div class="snowflake" style="left: 30%; animation-duration: 6s; font-size: 25px;">&#10052;</div>
-        <div class="snowflake" style="left: 40%; animation-duration: 9s; font-size: 28px;">&#10052;</div>
-        <div class="snowflake" style="left: 50%; animation-duration: 10s; font-size: 22px;">&#10052;</div>
-        <div class="snowflake" style="left: 60%; animation-duration: 7s; font-size: 26px;">&#10052;</div>
-        <div class="snowflake" style="left: 70%; animation-duration: 11s; font-size: 23px;">&#10052;</div>
-        <div class="snowflake" style="left: 80%; animation-duration: 6s; font-size: 27px;">&#10052;</div>
-        <div class="snowflake" style="left: 90%; animation-duration: 8s; font-size: 24px;">&#10052;</div>
-        <div class="snowflake" style="left: 60%; animation-duration: 5s; font-size: 30px;">&#10052;</div>
+        <!-- Membuat 20 salju yang jatuh secara vertikal -->
+        <div class="snowflake" style="left: 10%; animation-duration: 12s; font-size: 25px;">&#10052;</div>
+        <div class="snowflake" style="left: 15%; animation-duration: 14s; font-size: 28px;">&#10052;</div>
+        <div class="snowflake" style="left: 20%; animation-duration: 16s; font-size: 23px;">&#10052;</div>
+        <div class="snowflake" style="left: 25%; animation-duration: 10s; font-size: 30px;">&#10052;</div>
+        <div class="snowflake" style="left: 30%; animation-duration: 12s; font-size: 26px;">&#10052;</div>
+        <div class="snowflake" style="left: 35%; animation-duration: 13s; font-size: 24px;">&#10052;</div>
+        <div class="snowflake" style="left: 40%; animation-duration: 15s; font-size: 27px;">&#10052;</div>
+        <div class="snowflake" style="left: 45%; animation-duration: 11s; font-size: 22px;">&#10052;</div>
+        <div class="snowflake" style="left: 50%; animation-duration: 12s; font-size: 29px;">&#10052;</div>
+        <div class="snowflake" style="left: 55%; animation-duration: 14s; font-size: 25px;">&#10052;</div>
+        <div class="snowflake" style="left: 60%; animation-duration: 16s; font-size: 28px;">&#10052;</div>
+        <div class="snowflake" style="left: 65%; animation-duration: 18s; font-size: 23px;">&#10052;</div>
+        <div class="snowflake" style="left: 70%; animation-duration: 10s; font-size: 30px;">&#10052;</div>
+        <div class="snowflake" style="left: 75%; animation-duration: 12s; font-size: 26px;">&#10052;</div>
+        <div class="snowflake" style="left: 80%; animation-duration: 13s; font-size: 24px;">&#10052;</div>
+        <div class="snowflake" style="left: 85%; animation-duration: 15s; font-size: 27px;">&#10052;</div>
+        <div class="snowflake" style="left: 90%; animation-duration: 11s; font-size: 22px;">&#10052;</div>
+        <div class="snowflake" style="left: 95%; animation-duration: 12s; font-size: 29px;">&#10052;</div>
+        <div class="snowflake" style="left: 80%; animation-duration: 14s; font-size: 25px;">&#10052;</div>
+        <div class="snowflake" style="left: 90%; animation-duration: 16s; font-size: 28px;">&#10052;</div>
     </div>
 
     <!-- Formulir -->
@@ -220,5 +63,6 @@
         </form>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
