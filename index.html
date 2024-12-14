@@ -5,6 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Data Diri</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Snowman CSS */
+        .snowman {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 250px;
+        }
+
+        .snowman-body {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .snowman-head, .snowman-middle, .snowman-bottom {
+            background-color: white;
+            border-radius: 50%;
+            margin: 10px auto;
+            width: 80px;
+            height: 80px;
+        }
+
+        .snowman-head {
+            width: 50px;
+            height: 50px;
+        }
+
+        .snowman-middle {
+            width: 70px;
+            height: 70px;
+        }
+
+        .snowman-bottom {
+            width: 90px;
+            height: 90px;
+        }
+
+        .snowman-eyes {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .eye {
+            position: absolute;
+            background-color: black;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .eye.left {
+            left: -12px;
+        }
+
+        .eye.right {
+            right: -12px;
+        }
+
+        .snowman-nose {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 8px;
+            background-color: orange;
+            clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+        }
+
+        .snowman-buttons .button {
+            background-color: black;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin: 5px auto;
+        }
+
+        .snowman-buttons .top {
+            margin-top: 8px;
+        }
+
+        .snowman-buttons .middle {
+            margin-top: 8px;
+        }
+
+        .snowman-buttons .bottom {
+            margin-top: 8px;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,23 +109,28 @@
         <div class="snowflake" style="left: 10%; animation-duration: 12s; font-size: 25px;">&#10052;</div>
         <div class="snowflake" style="left: 15%; animation-duration: 14s; font-size: 28px;">&#10052;</div>
         <div class="snowflake" style="left: 20%; animation-duration: 16s; font-size: 23px;">&#10052;</div>
-        <div class="snowflake" style="left: 25%; animation-duration: 10s; font-size: 30px;">&#10052;</div>
-        <div class="snowflake" style="left: 30%; animation-duration: 12s; font-size: 26px;">&#10052;</div>
-        <div class="snowflake" style="left: 35%; animation-duration: 13s; font-size: 24px;">&#10052;</div>
-        <div class="snowflake" style="left: 40%; animation-duration: 15s; font-size: 27px;">&#10052;</div>
-        <div class="snowflake" style="left: 45%; animation-duration: 11s; font-size: 22px;">&#10052;</div>
-        <div class="snowflake" style="left: 50%; animation-duration: 12s; font-size: 29px;">&#10052;</div>
-        <div class="snowflake" style="left: 55%; animation-duration: 14s; font-size: 25px;">&#10052;</div>
-        <div class="snowflake" style="left: 60%; animation-duration: 16s; font-size: 28px;">&#10052;</div>
-        <div class="snowflake" style="left: 65%; animation-duration: 18s; font-size: 23px;">&#10052;</div>
-        <div class="snowflake" style="left: 70%; animation-duration: 10s; font-size: 30px;">&#10052;</div>
-        <div class="snowflake" style="left: 75%; animation-duration: 12s; font-size: 26px;">&#10052;</div>
-        <div class="snowflake" style="left: 80%; animation-duration: 13s; font-size: 24px;">&#10052;</div>
-        <div class="snowflake" style="left: 85%; animation-duration: 15s; font-size: 27px;">&#10052;</div>
-        <div class="snowflake" style="left: 90%; animation-duration: 11s; font-size: 22px;">&#10052;</div>
-        <div class="snowflake" style="left: 95%; animation-duration: 12s; font-size: 29px;">&#10052;</div>
-        <div class="snowflake" style="left: 80%; animation-duration: 14s; font-size: 25px;">&#10052;</div>
-        <div class="snowflake" style="left: 90%; animation-duration: 16s; font-size: 28px;">&#10052;</div>
+        <!-- ... (salju lainnya) ... -->
+    </div>
+
+    <!-- Snowman -->
+    <div class="snowman">
+        <div class="snowman-body">
+            <div class="snowman-head"></div>
+            <div class="snowman-middle"></div>
+            <div class="snowman-bottom"></div>
+        </div>
+        <div class="snowman-features">
+            <div class="snowman-eyes">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+            </div>
+            <div class="snowman-nose"></div>
+            <div class="snowman-buttons">
+                <div class="button top"></div>
+                <div class="button middle"></div>
+                <div class="button bottom"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Formulir -->
