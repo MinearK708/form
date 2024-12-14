@@ -9,13 +9,14 @@ document.getElementById('dataForm').addEventListener('submit', function(e) {
     });
 
     // Kirim data ke Google Apps Script
-    fetch("https://script.google.com/macros/s/AKfycbypRx_2ZnfvmmUZqlw2W81t0vM7mA4PshcOVSgHH3uCzUqv8SZfI7OBwMex1Alp1JfD/exec", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataObject) // Mengirim data dalam format JSON
-    })
+fetch("https://script.google.com/macros/s/AKfycbypRx_2ZnfvmmUZqlw2W81t0vM7mA4PshcOVSgHH3uCzUqv8SZfI7OBwMex1Alp1JfD/exec", {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',  // Pastikan header ini ada
+    },
+    body: JSON.stringify(dataObject)  // Mengirim data dalam format JSON
+})
+
     .then(response => response.text())  // Mengambil response dalam format text
     .then(response => {
         alert("Data telah berhasil dikirim: " + response);  // Menampilkan hasil dari server
