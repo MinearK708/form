@@ -1,21 +1,22 @@
 /* Atur tampilan dasar halaman */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9f5f1;
+    background: rgba(0, 0, 50, 0.9); /* Biru navy dengan opacity rendah */
     margin: 0;
     padding: 0;
     overflow-y: auto; /* Memastikan halaman dapat di-scroll */
     position: relative;
+    color: #fff; /* Warna font dasar */
 }
 
 /* Ornamen Salju */
 .snowflake {
     position: absolute;
     top: -10px;
-    color: white;
+    color: #fff;
     font-size: 2rem;
-    opacity: 0.9;
-    animation: fall 8s linear infinite;
+    opacity: 0.8;
+    animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
 }
 
 @keyframes fall {
@@ -24,26 +25,35 @@ body {
     }
 }
 
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
 /* Styling Form */
 .form-container {
-    background: linear-gradient(135deg, #b3d9ff, #f0f8ff);
+    background: linear-gradient(135deg, #3e4a89, #7886d6); /* Gradient biru lembut */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 420px;
     margin: 20px auto;
     position: relative;
     z-index: 10;
     backdrop-filter: blur(5px);
-    color: #333;
+    color: #fff; /* Warna teks putih */
 }
 
 h1 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
-    color: #003366;
+    color: #f9f9f9; /* Warna putih lembut */
 }
 
 label {
@@ -51,7 +61,7 @@ label {
     font-size: 16px;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #003366;
+    color: #f1f1f1; /* Teks kontras tinggi */
 }
 
 input[type="text"],
@@ -68,7 +78,7 @@ textarea {
 
 input[type="text"]:focus,
 textarea:focus {
-    border-color: #003366;
+    border-color: #66b2ff; /* Highlight fokus */
 }
 
 textarea {
@@ -82,7 +92,7 @@ textarea {
 
 .radio-group label {
     font-size: 16px;
-    color: #003366;
+    color: #e0e0e0;
     display: block;
     margin-bottom: 8px;
 }
@@ -94,7 +104,7 @@ textarea {
 button {
     width: 100%;
     padding: 15px;
-    background-color: #003366;
+    background-color: #0044cc; /* Biru gelap */
     color: white;
     border: none;
     border-radius: 8px;
@@ -104,19 +114,19 @@ button {
 }
 
 button:hover {
-    background-color: #00509e;
+    background-color: #0066ff; /* Biru terang */
 }
 
 /* Styling Santa Claus */
 .santa-container {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     z-index: 5;
 }
 
 .santa-image {
-    width: 100px;
+    width: 120px;
 }
 
 /* Responsif */
@@ -144,6 +154,6 @@ button:hover {
     }
 
     .santa-image {
-        width: 80px;
+        width: 100px;
     }
 }
