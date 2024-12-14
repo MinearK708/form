@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         snowflake.className = "snowflake";
         snowflake.style.left = `${Math.random() * 100}vw`;
         snowflake.style.animationDelay = `${Math.random() * 10}s`;
-        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+        snowflake.style.fontSize = `${Math.random() * 20 + 10}px`;
         document.body.appendChild(snowflake);
     }
 });
