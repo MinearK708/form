@@ -9,6 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    position: relative; /* Pastikan posisi body terdefinisi */
 }
 
 /* Snowflakes */
@@ -16,15 +17,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    pointer-events: none;
-    z-index: 1;
     width: 100%;
     height: 100%;
+    pointer-events: none;
+    z-index: 1; /* Snowflakes harus berada di bawah form */
 }
 
 .snowflake {
     position: absolute;
-    top: -10px;
     color: white;
     font-size: 24px;
     user-select: none;
@@ -51,6 +51,7 @@ body {
     box-sizing: border-box;
     position: relative;
     z-index: 2; /* Pastikan form berada di atas snowflakes */
+    background-color: rgba(255, 255, 255, 0.8); /* Warna form sedikit transparan */
 }
 
 h1 {
