@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Data Diri - Natal</title>
+    <title>Formulir Data Diri</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Ornamen Salju -->
-    <script src="script.js" defer></script>
-
-    <!-- Kontainer Santa -->
-    <div class="santa-container">
-        <img src="https://id.pinterest.com/pin/236227942950513135/" alt="Santa Claus Riding Deer" class="santa-image">
+    <!-- Snowflakes animation -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">❄️</div>
     </div>
 
-    <!-- Kontainer Formulir -->
     <div class="form-container">
         <h1>Formulir Data Diri</h1>
         <form id="dataForm" action="join-grup.html" method="GET">
-            <!-- Nama Lengkap -->
             <label for="nama">Nama Lengkap:</label>
             <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
 
-            <!-- Nomor Telepon -->
             <label for="telepon">Nomor Telepon:</label>
             <input type="text" id="telepon" name="telepon" placeholder="Masukkan Nomor Telepon" required>
 
-            <!-- Usia -->
             <label>Usia:</label>
             <div class="radio-group">
                 <label><input type="radio" name="usia" value="12-15" required> 12-15 tahun</label>
@@ -35,20 +37,19 @@
                 <label><input type="radio" name="usia" value="20 keatas"> 20 tahun keatas</label>
             </div>
 
-            <!-- Alamat -->
             <label for="alamat">Alamat:</label>
             <textarea id="alamat" name="alamat" placeholder="Masukkan Alamat Lengkap" required></textarea>
 
-            <!-- Profesi -->
             <label>Profesi:</label>
             <div class="radio-group">
                 <label><input type="radio" name="profesi" value="Pelajar" required> Pelajar</label>
                 <label><input type="radio" name="profesi" value="Bekerja"> Bekerja</label>
             </div>
 
-            <!-- Tombol Kirim -->
             <button type="submit">Selanjutnya</button>
         </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
