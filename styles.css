@@ -53,6 +53,152 @@ body {
     z-index: 3;
     background-color: rgba(28, 45, 93, 0.85);
 }
+/* Snowman */
+.snowman {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.snowman .body .bottom,
+.snowman .body .middle,
+.snowman .body .top {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman .body .bottom {
+    width: 150px;
+    height: 150px;
+    bottom: 0;
+}
+
+.snowman .body .middle {
+    width: 120px;
+    height: 120px;
+    bottom: 90px;
+}
+
+.snowman .body .top {
+    width: 90px;
+    height: 90px;
+    bottom: 180px;
+}
+
+.snowman .hat {
+    width: 120px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman .hat:before {
+    content: '';
+    width: 60px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman .eyes {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman .eye {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.snowman .eye.left {
+    left: -25px;
+}
+
+.snowman .eye.right {
+    right: -25px;
+}
+
+.snowman .nose {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid orange;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman .buttons .button {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman .buttons .top {
+    top: 120px;
+}
+
+.snowman .buttons .middle {
+    top: 160px;
+}
+
+.snowman .buttons .bottom {
+    top: 200px;
+}
+
+/* Styling Form */
+.form-container {
+    background: linear-gradient(135deg, #1c2d5d, #3b4a7f); /* Gradient biru navy dan lebih gelap */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
+    background-color: rgba(28, 45, 93, 0.85);
+}
+
+/* Tombol */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #6f4f1f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8e6a42;
+}
+
 /* Judul */
 h1 {
     text-align: center;
