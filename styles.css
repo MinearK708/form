@@ -53,55 +53,6 @@ body {
     z-index: 3;
     background-color: rgba(28, 45, 93, 0.85);
 }
-
-/* Ornamen gambar (Rusa Natal dan Snowman) */
-.ornament {
-    position: absolute;
-    top: 10%;
-    width: 100px;  /* Ukuran bisa diatur sesuai kebutuhan */
-    opacity: 0.8;
-    z-index: 1;
-}
-
-.ornament-left {
-    left: -15%; /* Menyesuaikan posisi ornamen kiri */
-}
-
-.ornament-right {
-    right: -15%; /* Menyesuaikan posisi ornamen kanan */
-}
-
-/* Atur posisi ornamen berdasarkan ukuran layar */
-@media (max-width: 768px) {
-    .ornament {
-        width: 80px;
-        top: 5%;
-    }
-
-    .ornament-left {
-        left: -10%;
-    }
-
-    .ornament-right {
-        right: -10%;
-    }
-}
-
-@media (max-width: 480px) {
-    .ornament {
-        width: 60px; /* Lebih kecil untuk layar kecil */
-        top: 8%;
-    }
-
-    .ornament-left {
-        left: -5%;
-    }
-
-    .ornament-right {
-        right: -5%;
-    }
-}
-
 /* Judul */
 h1 {
     text-align: center;
